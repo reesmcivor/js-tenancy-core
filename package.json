@@ -1,5 +1,5 @@
 {
-  "name": "reesmcivor-react-tenancy-core",
+  "name": "js-tenancy-core",
   "version": "1.0.0",
   "description": "Core react laravel tenancy",
   "main": "index.js",
