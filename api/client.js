@@ -1,18 +1,19 @@
 
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { create } from 'apisauce';
+import storage from 'js-tenancy-auth/storage';
 
 const apiClient = create({
-    baseURL: 'https://test.tenancy.staging.logicrises.co.uk/api/',
+    baseURL: 'https://5c10-82-45-127-179.ngrok-free.app/api/',
     headers: {
         Accept: 'application/json',
     }
 });
 
 apiClient.addAsyncRequestTransform(request => async () => {
-    const authToken = await AsyncStorage.getItem('token');
-    if (!authToken) return;
-    request.headers["Authorization"] = "Bearer " + authToken
+
+    const user = await storage.getUser();
+    if (!user?.token) return;
+    request.headers["Authorization"] = "Bearer " + user?.token
 });
 
 export default apiClient;

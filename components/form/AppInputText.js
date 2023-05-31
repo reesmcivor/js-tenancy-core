@@ -20,7 +20,7 @@ const AppInputText = (props) => {
                 onBlur={() => setFieldTouched(name)}
                 onChangeText={handleChange(name)}
                 placeholderTextColor={"#CCCCCC"}
-                className={`bg-white p-5 text-lg rounded-2xl h-50 border border-solid border-grey font-regular ${errors[name] ? 'border-red' : ''}`} 
+                className={`bg-white p-5 text-lg rounded-2xl border border-solid border-grey font-regular ${errors[name] ? 'border-red' : ''}`} 
                 {...props} 
             />
 

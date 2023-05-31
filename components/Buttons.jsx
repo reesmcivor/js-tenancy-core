@@ -7,7 +7,7 @@ const Button = (props) => {
             disabled={props.disabled}
             onPress={onButtonPress}
             className={`flex items-center rounded-2xl text-center p-5 ${buttonClassNames}`}>
-            <Text className={`font-regular text-lg font-regular color-primary ${textClassNames}`}>{title}</Text>
+            <Text className={`font-regular text-lg font-regular ${textClassNames}`}>{title}</Text>
             {props.children}
         </TouchableOpacity>
     )
@@ -28,7 +28,7 @@ const TransparentButton = (props) => {
 const PrimaryButton = (props) => {
     return Button({
         ...props, 
-        buttonClassNames: props.buttonClassNames + " bg-primary", 
+        buttonClassNames: props.buttonClassNames +  ` bg-primary`, 
         textClassNames: props.textClassNames + ` text-white`,
     });
 }
